@@ -1,0 +1,10 @@
+<%=tag.fieldset do %>
+  <%=tag.legend 'RegularExpression' %>
+  <%=tag.p do %>
+    <%= label_tag :regex, 'Regex:' %>
+    <%= text_area_tag 'settings[regex]', Setting.plugin_redmine_regexidentifier['regex'], rows: 10, cols: 60 %>
+    <%= tag.em class: 'info' do %>
+      <%= 'Regular expression for allowed project identifiers. Linebreaks are allowed but will be removed befor usage!' %>
+    <% end %>
+  <% end %>
+<% end %>
