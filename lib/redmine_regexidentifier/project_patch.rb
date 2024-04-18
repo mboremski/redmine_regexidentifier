@@ -7,7 +7,7 @@ module RedmineRegexIdentifier
       base.send(:include, InstanceMethods)
       base.class_eval do
         unloadable
-        validate :validate_identifier_regex
+        validate :validate_identifier_regex, on: :create
       end
     end
 
