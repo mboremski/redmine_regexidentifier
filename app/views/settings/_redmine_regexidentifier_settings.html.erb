@@ -4,7 +4,11 @@
     <%= label_tag :regex, 'Regex:' %>
     <%= text_area_tag 'settings[regex]', Setting.plugin_redmine_regexidentifier['regex'], rows: 10, cols: 60 %>
     <%= tag.em class: 'info' do %>
-      <%= 'Regular expression for allowed project identifiers. Linebreaks are allowed but will be removed befor usage!' %>
+      <%= 'Regular expression for allowed project identifiers. Linebreaks are allowed but will be removed before usage!' %>
     <% end %>
+  <% end %>
+  <%=tag.p do %>
+    <%= label_tag 'settings[enabled]', 'Enable validation:' %>
+    <%= check_box_tag 'settings[enabled]', true, Setting.plugin_redmine_regexidentifier['enabled'] %>
   <% end %>
 <% end %>
